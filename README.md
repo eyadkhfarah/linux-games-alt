@@ -80,8 +80,8 @@ Linux Games Alt operates as a metadata aggregator under **Fair Use** for educati
 
 Join the **Nexus** to contribute patches or report compatibility updates:
 
-* **Discord:** [Join Server](https://discord.gg/yourlink)
-* **Issues:** [GitHub Issue Tracker](https://www.google.com/search?q=https://github.com/your-username/linux-games-alt/issues)
+* **Discord:** [Join Server](https://discord.gg/Fzzn6BgREs)
+* **Issues:** [GitHub Issue Tracker](https://github.com/eyadkhfarah/linux-games-alt/issues)
 
 
 ### Deployment Advice

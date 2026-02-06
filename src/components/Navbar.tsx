@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { RiDiscordFill, RiGithubFill, RiGamepadLine } from "react-icons/ri";
 import { Contact } from "@/lib/SocialContact";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -12,9 +13,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
-          <div className="w-12 h-12 rounded-xl bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <RiGamepadLine size={28} className="text-white" />
-          </div>
+          <Image src="/Logo.svg" alt="Logo" width={52} height={52} className="rounded-sm" />
           <div className="flex flex-col">
             <span className="text-xl font-black tracking-tight text-white leading-none">
               LINUX GAMES<span className="text-indigo-400">ALT</span>
