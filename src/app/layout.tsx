@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Viewport settings for mobile optimization
 export const viewport: Viewport = {
@@ -10,23 +11,23 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const siteUrl =  
-    process.env.NEXT_PUBLIC_DOMAIN_URL || "https://linuxgamesalt.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_DOMAIN_URL || "https://linuxgamesalt.com";
 
 export const metadata: Metadata = {
   title: {
     default: "Linux Games Alt | Tactical Gaming Alternatives",
     template: "%s | Linux Games Alt",
   },
-  description: 
+  description:
     "Deploy superior gaming alternatives. Verify anti-cheat compatibility, Proton tiers, and tactical game data for Linux and Steam Deck.",
   keywords: [
-    "Gaming Alternatives", 
-    "Anti-cheat Compatibility", 
-    "Linux Gaming", 
-    "Steam Deck Verified", 
-    "ProtonDB", 
-    "Linux Games Alt"
+    "Gaming Alternatives",
+    "Anti-cheat Compatibility",
+    "Linux Gaming",
+    "Steam Deck Verified",
+    "ProtonDB",
+    "Linux Games Alt",
   ],
   authors: [{ name: "Linux Games Alt Team" }],
   creator: "Linux Games Alt",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  verification:{
+  verification: {
     google: "phsyYqmauz0IEuSeMX3muiHhjWBOp6bBZDGmi8QNHXw",
   },
   openGraph: {
@@ -43,7 +44,8 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Linux Games Alt",
     title: "Linux Games Alt | Tactical Gaming Alternatives",
-    description: "Find playable alternatives for games with restrictive anti-cheats on Linux and Steam Deck.",
+    description:
+      "Find playable alternatives for games with restrictive anti-cheats on Linux and Steam Deck.",
     images: [
       {
         url: "/og-image.png", // Ensure this exists in your public folder
@@ -56,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Linux Games Alt",
-    description: "Deploy superior gaming alternatives with verified compatibility.",
+    description:
+      "Deploy superior gaming alternatives with verified compatibility.",
     creator: "@combatredirect", // Replace with your X handle if you have one
     images: ["/og-image.png"],
   },
@@ -79,6 +82,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-3QK5Z4LMJQ" />
     </html>
   );
 }
