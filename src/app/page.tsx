@@ -109,7 +109,7 @@ export default async function Home() {
                     href={Contact.discord}
                     className="px-12 py-5 bg-white text-black hover:bg-indigo-600 hover:text-white rounded-2xl font-black uppercase tracking-widest transition-all shadow-2xl active:scale-95"
                 >
-                    Connect to Signal
+                    Connect to Us
                 </a>
             </div>
         </div>

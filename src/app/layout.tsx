@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Find playable alternatives for games with restrictive anti-cheats on Linux and Steam Deck.",
     images: [
       {
-        url: "/og-image.png", // Ensure this exists in your public folder
+        url: "/main.webp", // Ensure this exists in your public folder
         width: 1200,
         height: 630,
         alt: "Linux Games Alt Interface Preview",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
     title: "Linux Games Alt",
     description:
       "Deploy superior gaming alternatives with verified compatibility.",
-    creator: "@combatredirect", // Replace with your X handle if you have one
-    images: ["/og-image.png"],
+    creator: "@linuxgamesalt", // Replace with your X handle if you have one
+    images: ["/main.webp"],
   },
   icons: {
     icon: "/favicon.ico",
