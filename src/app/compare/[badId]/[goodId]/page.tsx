@@ -9,10 +9,22 @@ interface PageProps {
   params: Promise<{ badId: string; goodId: string }>;
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 async function fetchGame(id: string) {
-  const res = await fetch(`http://localhost:3000/api/game/${id}`, { cache: 'force-cache' });
-  const json = await res.json();
-  return json.success ? json.data : null;
+  try {
+    const res = await fetch(`${API_BASE}/api/game/${id}`, { 
+      next: { revalidate: 3600 } // Better than force-cache for dynamic data
+    });
+    
+    if (!res.ok) return null;
+    
+    const json = await res.json();
+    return json.success ? json.data : null;
+  } catch (error) {
+    console.error("Fetch failed:", error);
+    return null;
+  }
 }
 
 // --- DYNAMIC SEO GENERATOR ---
