@@ -1,0 +1,23 @@
+# Linux Games Alt
+
+> The specialized database for migrating players. Cross-referencing OS-locked software with community-verified Linux alternatives.
+
+## Project Context
+- **Name:** Linux Games Alt (formerly Combat Redirect)
+- **Tech Stack:** Next.js 15, Tailwind CSS, Lucide/Remix Icons, Framer Motion.
+- **Primary Mission:** Help Windows users find Linux-native or Proton-compatible alternatives for gaming and productivity software.
+
+## Key Modules
+- **Library:** A searchable database of Windows titles.
+- **Comparison Engine:** Detailed side-by-side analysis of Windows software vs. Linux alternatives.
+- **ProtonDB Integration:** Uses community telemetry to verify compatibility.
+- **Nexus (Contact):** Community-driven support via Discord and GitHub.
+
+## Technical Specifications
+- **Design System:** Dark-themed, high-contrast (Zinc-950), "tactical" aesthetic with indigo/purple accents.
+- **Framework:** React-based with focus on semantic HTML and SEO metadata.
+- **Data Sourcing:** Steam Web API and community-driven verification.
+
+## Legal & Privacy
+- **Privacy:** Minimal telemetry, no third-party tracking, SSL/TLS secured.
+- **Terms:** Educational/transformative metadata aggregation under Fair Use.
