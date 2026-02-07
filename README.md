@@ -30,8 +30,8 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v24 or later).
 
 1. **Clone the repository:**
 ```bash
-   git clone [https://github.com/your-username/linux-games-alt.git](https://github.com/your-username/linux-games-alt.git)
-   cd linux-games-alt
+git clone [https://github.com/your-username/linux-games-alt.git](https://github.com/your-username/linux-games-alt.git)
+cd linux-games-alt
 ```
 
 
@@ -40,14 +40,12 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v24 or later).
 npm install
 # or
 yarn install
-
 ```
 
 
 4. **Run the development server:**
 ```bash
 npm run dev
-
 ```
 
 
@@ -62,7 +60,6 @@ Open [http://localhost:3000](http://localhost:3000) to see the mission in action
 ├── components/         # Reusable UI components
 ├── public/             # Static assets and llms.txt
 └── lib/                # API utilities and data fetching
-
 ```
 
 ---
