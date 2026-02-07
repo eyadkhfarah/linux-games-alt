@@ -30,19 +30,27 @@ export default async function BrowsePage({ searchParams }: PageProps) {
   const { genre, q } = await searchParams;
 
   const filteredGames = GameAlt.filter((game) => {
-    const searchLower = q?.toLowerCase() || "";
+    const qLower = q?.toLowerCase().trim() || "";
+
+    // Create a "search bucket" string of everything we want to match against
+    // We remove spaces and dashes to handle things like "counter strike" vs "counter-strike"
+    const searchableText = [game.title, game.genre, ...game.tags]
+      .join(" ")
+      .toLowerCase()
+      .replace(/[- ]/g, "");
+
+    const cleanedQuery = qLower.replace(/[- ]/g, "");
+
     const matchesGenre = !genre || genre === "All" || game.genre === genre;
-    const matchesSearch =
-      !q ||
-      game.title.toLowerCase().includes(searchLower) ||
-      game.tags.some((tag) => tag.toLowerCase().includes(searchLower));
+
+    // Matches if the query is in our title/tags, OR if the title is in our query
+    const matchesSearch = !q || searchableText.includes(cleanedQuery);
 
     return matchesGenre && matchesSearch;
   });
 
   return (
     <div className="flex flex-col lg:flex-row gap-12 items-start relative">
-      
       {/* 1. Filter Sidebar: "The Navigation Deck" */}
       <aside className="lg:sticky lg:top-32 w-full lg:w-72 shrink-0 z-20">
         <div className="p-1 rounded-4xl bg-linear-to-b from-white/10 to-transparent">
@@ -63,14 +71,13 @@ export default async function BrowsePage({ searchParams }: PageProps) {
         {/* Results Header: "Status Bar" style */}
         <div className="mb-8 flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
-             <div className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
-                <span className="text-xs font-black text-indigo-400 uppercase tracking-widest">
-                  {filteredGames.length} Matches Found
-                </span>
-             </div>
-             <div className="hidden sm:block h-px w-24 bg-white/10" />
+            <div className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+              <span className="text-xs font-black text-indigo-400 uppercase tracking-widest">
+                {filteredGames.length} Matches Found
+              </span>
+            </div>
+            <div className="hidden sm:block h-px w-24 bg-white/10" />
           </div>
-          
         </div>
 
         {/* The Grid */}
@@ -78,7 +85,10 @@ export default async function BrowsePage({ searchParams }: PageProps) {
           <Suspense fallback={<GridSkeleton />}>
             {filteredGames.length > 0 ? (
               filteredGames.map((game, i) => (
-                <div key={`${game.badId}-${i}`} className="group transition-all duration-300">
+                <div
+                  key={`${game.badId}-${i}`}
+                  className="group transition-all duration-300"
+                >
                   <GameCard
                     unsupportedId={game.badId}
                     alternativeId={game.goodId}
@@ -90,28 +100,29 @@ export default async function BrowsePage({ searchParams }: PageProps) {
               /* 3. Empty State: "Intel Missing" */
               <div className="relative py-24 flex flex-col items-center text-center rounded-[3rem] bg-white/5 border border-white/5 overflow-hidden">
                 <div className="absolute inset-0 bg-linear-to-b from-indigo-500/5 to-transparent pointer-events-none" />
-                
+
                 <div className="relative z-10">
-                    <div className="h-20 w-20 bg-zinc-900 border border-white/10 rounded-3xl flex items-center justify-center mb-8 mx-auto shadow-2xl">
-                      <RiSearchEyeLine size={40} className="text-zinc-500" />
-                    </div>
+                  <div className="h-20 w-20 bg-zinc-900 border border-white/10 rounded-3xl flex items-center justify-center mb-8 mx-auto shadow-2xl">
+                    <RiSearchEyeLine size={40} className="text-zinc-500" />
+                  </div>
 
-                    <h3 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">
-                      Game <span className="text-indigo-500">Not Found</span>
-                    </h3>
-                    <p className="text-zinc-400 max-w-sm mx-auto mb-10 font-medium">
-                      No matches located in the current sector. Broaden your filters or submit new game to the squad.
-                    </p>
+                  <h3 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">
+                    Game <span className="text-indigo-500">Not Found</span>
+                  </h3>
+                  <p className="text-zinc-400 max-w-sm mx-auto mb-10 font-medium">
+                    No matches located in the current sector. Broaden your
+                    filters or submit new game to the squad.
+                  </p>
 
-                    <Link
-                      href={Contact.discord}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-10 py-4 bg-white text-black hover:bg-indigo-500 hover:text-white rounded-2xl font-black uppercase tracking-tight transition-all active:scale-95 shadow-2xl"
-                    >
-                      <RiDiscordFill size={24} />
-                      Request Addition
-                    </Link>
+                  <Link
+                    href={Contact.discord}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-10 py-4 bg-white text-black hover:bg-indigo-500 hover:text-white rounded-2xl font-black uppercase tracking-tight transition-all active:scale-95 shadow-2xl"
+                  >
+                    <RiDiscordFill size={24} />
+                    Request Addition
+                  </Link>
                 </div>
               </div>
             )}

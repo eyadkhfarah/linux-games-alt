@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { RiListCheck2 } from "react-icons/ri";
+import { GameAlt } from "@/lib/data";
 
 // SEO Metadata for the Browse Library
 export const metadata: Metadata = {
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
 };
 
 export default function BrowseLayout({ children }: { children: React.ReactNode }) {
+
+  const totalGames = GameAlt.length;
+  
   return (
     <main className="relative min-h-screen bg-zinc-950 text-white selection:bg-indigo-500/30">
       
@@ -43,7 +47,7 @@ export default function BrowseLayout({ children }: { children: React.ReactNode }
             {/* Quick Stats Widget */}
             <div className="hidden lg:flex items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
                 <div className="text-center px-4 border-r border-white/10">
-                    <div className="text-2xl font-black text-white leading-none">8+</div>
+                    <div className="text-2xl font-black text-white leading-none">+{totalGames}</div>
                     <div className="text-[10px] font-bold text-zinc-500 uppercase mt-1">Titles</div>
                 </div>
                 <div className="text-center px-4">

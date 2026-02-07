@@ -1,14 +1,24 @@
 "use server";
 
 import { SteamApiResponse, SteamGame } from "@/types/steam";
+import { EXTERNAL_GAMES } from "./NonSteamData"; // Ensure this path matches
 
-// Data fetching helper
 export async function getSteamGame(id: string): Promise<SteamGame | null> {
-  const res = await fetch(`https://store.steampowered.com/api/appdetails?appids=${id}`, {
-    // Next.js 16 uses explicit caching - we'll cache this for 24 hours
-    next: { revalidate: 86400 } 
-  });
-  
-  const data: SteamApiResponse = await res.json();
-  return data[id]?.success ? data[id].data : null;
+  // 1. Check our manual list first
+  if (EXTERNAL_GAMES[id]) {
+    return EXTERNAL_GAMES[id];
+  }
+
+  // 2. Otherwise, hit the Steam API
+  try {
+    const res = await fetch(`https://store.steampowered.com/api/appdetails?appids=${id}`, {
+      next: { revalidate: 86400 } 
+    });
+    
+    const data: SteamApiResponse = await res.json();
+    return data[id]?.success ? data[id].data : null;
+  } catch (error) {
+    console.error("Steam API Error:", error);
+    return null;
+  }
 }

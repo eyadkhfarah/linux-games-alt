@@ -1,4 +1,5 @@
 import { getSteamGame } from "@/lib/SteamData";
+import Image from "next/image";
 import Link from "next/link";
 import { 
   RiArrowRightSLine, 
@@ -44,9 +45,9 @@ export default async function GameCard({ unsupportedId, alternativeId, antiCheat
       <div className="grid grid-cols-1 md:grid-cols-[1.2fr_auto_1.2fr] items-center gap-4 p-5">
         
         {/* LEFT: UNSUPPORTED */}
-        <div className="flex items-center gap-4 opacity-30 grayscale transition-all group-hover:opacity-60">
+        <div className="md:flex grid gap-4 opacity-30 grayscale transition-all group-hover:opacity-60">
           <div className="relative shrink-0 overflow-hidden rounded-2xl">
-            <img src={badGame.header_image} className="h-24 w-36 object-cover" alt={badGame.name} />
+            <Image src={badGame.header_image} width={500} height={296} className="md:h-24 md:w-36 object-cover" alt={badGame.name} />
           </div>
           <div className="min-w-0 flex-1">
             <h3 className="font-black text-zinc-300 truncate text-sm uppercase tracking-tighter">{badGame.name}</h3>
@@ -60,7 +61,7 @@ export default async function GameCard({ unsupportedId, alternativeId, antiCheat
             <div className="absolute inset-0 bg-indigo-500/20 blur-xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-500" />
             
             <div className="relative z-10 h-12 w-12 rounded-full bg-zinc-950 border border-white/10 flex items-center justify-center group-hover:border-indigo-500/50 transition-all shadow-2xl">
-                <RiArrowRightSLine className="text-indigo-500 group-hover:translate-x-0.5 transition-transform" size={28} />
+                <RiArrowRightSLine className="text-indigo-500 md:rotate-0 rotate-90 group-hover:translate-x-0.5 transition-transform" size={28} />
             </div>
             
             <div className="mt-2 text-[8px] font-black uppercase tracking-[0.3em] text-zinc-500 group-hover:text-indigo-400 transition-colors">
@@ -69,7 +70,7 @@ export default async function GameCard({ unsupportedId, alternativeId, antiCheat
         </div>
 
         {/* RIGHT: THE UPGRADE */}
-        <div className="flex items-center justify-end gap-4 text-right">
+        <div className="flex md:flex-row flex-col-reverse justify-end gap-4 text-right">
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-end gap-2 mb-1">
                 <span className="text-[8px] font-black uppercase text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Verified</span>
@@ -87,7 +88,7 @@ export default async function GameCard({ unsupportedId, alternativeId, antiCheat
           </div>
           
           <div className="relative shrink-0 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-indigo-500/50 transition-all">
-            <img src={goodGame.header_image} className="h-28 w-44 object-cover" alt={goodGame.name} />
+            <Image src={goodGame.header_image} width={500} height={296} className="md:h-24 md:w-36 object-cover" alt={goodGame.name} />
           </div>
         </div>
 

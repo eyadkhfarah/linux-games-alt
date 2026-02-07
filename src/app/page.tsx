@@ -18,7 +18,7 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-[11px] font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-[9px] font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-md">
             <RiGamepadLine className="text-lg" />
             The Ultimate Linux Alternative Index
           </div>
