@@ -1,7 +1,7 @@
 import { SteamGame } from "@/types/steam";
 
 export const EXTERNAL_GAMES: Record<string, SteamGame> = {
-  fortnite: {
+  "fortnite": {
     type: "game",
     name: "Fortnite",
     steam_appid: 0,
@@ -28,7 +28,7 @@ export const EXTERNAL_GAMES: Record<string, SteamGame> = {
     release_date: { coming_soon: false, date: "21 Jul, 2017" },
     pc_requirements: { minimum: "Min Specs...", recommended: "Rec Specs..." },
   },
-  valorant: {
+  "valorant": {
     type: "game",
     name: "Valorant",
     steam_appid: 0,
