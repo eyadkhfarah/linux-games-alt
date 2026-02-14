@@ -1,20 +1,19 @@
 import { GameMapping } from "@/types/steam";
 import { RiAlertLine } from "react-icons/ri";
 
-interface DiscloserProps {
+interface DisclosureProps {
   mapping: GameMapping | undefined | null;
 }
 
-export default function Discloser({ mapping }: DiscloserProps ) {
-  if (!mapping?.discloser) return null;
+export default function Disclosure({ mapping }: DisclosureProps ) {
+  if (!mapping?.disclosure) return null;
 
   return (
     <>
-      {mapping?.discloser && (
+      {mapping?.disclosure && (
         <div className="relative max-w-3xl mx-auto mb-16 group">
           <div className="relative bg-yellow-500/2 backdrop-blur-xl border border-yellow-500/20 rounded-3xl p-6 md:p-8 overflow-hidden">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Icon with Pulsing Effect */}
               <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-yellow-500/20 blur-md animate-pulse rounded-full" />
                 <div className="relative h-14 w-14 grid place-items-center bg-yellow-500/10 border border-yellow-500/30 rounded-2xl">
@@ -31,7 +30,7 @@ export default function Discloser({ mapping }: DiscloserProps ) {
                 </div>
 
                 <h2 className="font-bold text-zinc-200 tracking-tight leading-relaxed italic">
-                  {mapping.discloser}
+                  {mapping.disclosure}
                 </h2>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { getSteamGame } from "@/lib/SteamData";
 import { GameAlt } from "@/lib/data";
 import BadGameCard from "@/components/Compare/BadGameCard";
 import GoodGameCard from "@/components/Compare/GoodGameCard";
-import Discloser from "@/components/Compare/Discloser";
+import Disclosure from "@/components/Compare/disclosure";
 
 interface PageProps {
   params: Promise<{ badId: string; goodId: string }>;
@@ -81,7 +81,7 @@ export default async function ComparisonPage({ params }: PageProps) {
           </p>
         </header>
 
-        <Discloser mapping={mapping} />
+        <Disclosure mapping={mapping} />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 items-start">
           <BadGameCard badGame={badGame} mapping={mapping} />
