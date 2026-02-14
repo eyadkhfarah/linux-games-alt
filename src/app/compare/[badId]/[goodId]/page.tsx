@@ -1,8 +1,4 @@
-import {
-  RiArrowRightSLine,
-  RiGroupLine,
-  RiComputerLine,
-} from "react-icons/ri";
+import { RiArrowRightSLine, RiGroupLine, RiComputerLine } from "react-icons/ri";
 import { Metadata } from "next";
 import { getSteamGame } from "@/lib/SteamData";
 import { GameAlt } from "@/lib/data";
@@ -38,9 +34,11 @@ export default async function ComparisonPage({ params }: PageProps) {
     getSteamGame(goodId),
   ]);
 
- const mapping = GameAlt.find(
-  (alt) => String(alt.badId) === String(badId) && String(alt.goodId) === String(goodId)
-);
+  const mapping = GameAlt.find(
+    (alt) =>
+      String(alt.badId).toLowerCase() === String(badId).toLowerCase() &&
+      String(alt.goodId).toLowerCase() === String(goodId).toLowerCase(),
+  );
 
   if (!badGame || !goodGame) {
     return (
@@ -70,20 +68,20 @@ export default async function ComparisonPage({ params }: PageProps) {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-14 pb-20">
         <header className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-none">
-            Combat{" "}
+            Viable{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500">
-              Redirect
+              Alternative
             </span>
           </h1>
           <p className="mt-4 text-zinc-500 text-xs font-bold uppercase tracking-[0.5em]">
-            Sector Migration Dossier
+            Compatibility Migration Dossier
           </p>
         </header>
 
-        <Discloser mapping={mapping}/>
+        <Discloser mapping={mapping} />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 items-start">
           <BadGameCard badGame={badGame} mapping={mapping} />
@@ -99,7 +97,11 @@ export default async function ComparisonPage({ params }: PageProps) {
             <div className="h-px lg:h-32 w-24 lg:w-px bg-linear-to-b from-indigo-500/0 to-transparent" />
           </div>
 
-          <GoodGameCard goodGame={goodGame} mapping={mapping} deckVerified={mapping?.deckVerified} />
+          <GoodGameCard
+            goodGame={goodGame}
+            mapping={mapping}
+            deckVerified={mapping?.deckVerified}
+          />
         </div>
 
         <section className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">

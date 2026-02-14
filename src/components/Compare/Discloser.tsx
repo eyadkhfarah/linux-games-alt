@@ -1,4 +1,4 @@
-import { GameMapping } from "@/lib/data";
+import { GameMapping } from "@/types/steam";
 import { RiAlertLine } from "react-icons/ri";
 
 interface DiscloserProps {
@@ -6,11 +6,11 @@ interface DiscloserProps {
 }
 
 export default function Discloser({ mapping }: DiscloserProps ) {
-  if (!mapping?.discovery) return null;
+  if (!mapping?.discloser) return null;
 
   return (
     <>
-      {mapping?.discovery && (
+      {mapping?.discloser && (
         <div className="relative max-w-3xl mx-auto mb-16 group">
           <div className="relative bg-yellow-500/2 backdrop-blur-xl border border-yellow-500/20 rounded-3xl p-6 md:p-8 overflow-hidden">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
@@ -31,7 +31,7 @@ export default function Discloser({ mapping }: DiscloserProps ) {
                 </div>
 
                 <h2 className="font-bold text-zinc-200 tracking-tight leading-relaxed italic">
-                  {mapping.discovery}
+                  {mapping.discloser}
                 </h2>
               </div>
             </div>

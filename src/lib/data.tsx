@@ -1,25 +1,4 @@
-export interface GameMapping {
-  badId: string;
-  goodId: string;
-  title: string;
-  genre: string[];
-  tags: string[];
-  discovery?: string;
-  badStatus: "Borked" | "Bronze";
-  goodStatus: "Native" | "Platinum" | "Gold" | "Silver";
-  deckVerified: "Verified" | "Playable" | "Unsupported" | "Unknown";
-  rating?: number;
-  customData?: {
-    name: string;
-    imageUrl: string;
-    publisher: string;
-  };
-  antiCheat?: {
-    name: string;
-    status: string;
-    alternativeFix?: string;
-  };
-}
+import { GameMapping } from "@/types/steam";
 
 export const GameAlt: GameMapping[] = [
   {
@@ -31,14 +10,14 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Verified",
     rating: 5,
     genre: ["Shooter"],
-    tags: ["FPS", "Tactical", "Competitive", "5v5"],
+    tags: ["FPS", "Tactical", "Competitive", "Military", "5v5"],
     antiCheat: {
       name: "BattlEye",
       status: "Broken",
       alternativeFix: "VAC (Native)",
     },
   },
-  
+
   {
     badId: "valorant",
     goodId: "730",
@@ -48,14 +27,14 @@ export const GameAlt: GameMapping[] = [
     goodStatus: "Native",
     rating: 4.8,
     genre: ["Shooter"],
-    tags: ["FPS", "Tactical", "Competitive", "5v5", "Free to Play"],
+    tags: ["FPS", "Tactical", "Competitive", "Military", "5v5", "Free to Play"],
     antiCheat: {
       name: "Vanguard",
       status: "Kernel Hardlock",
       alternativeFix: "Counter-Strike 2 (VAC, Native Linux)",
     },
   },
-  
+
   {
     badId: "359550",
     goodId: "440",
@@ -65,7 +44,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Verified",
     rating: 5,
     genre: ["Shooter"],
-    tags: ["FPS", "Tactical", "Competitive", "5v5"],
+    tags: ["FPS", "Tactical", "Military", "Competitive", "5v5"],
     antiCheat: {
       name: "BattlEye",
       status: "Broken",
@@ -81,7 +60,7 @@ export const GameAlt: GameMapping[] = [
     goodStatus: "Native",
     rating: 4.8,
     genre: ["Shooter"],
-    tags: ["FPS", "Tactical", "Competitive", "5v5", "Free to Play"],
+    tags: ["FPS", "Tactical", "Competitive", "Military", "5v5", "Free to Play"],
     antiCheat: {
       name: "Vanguard",
       status: "Kernel Hardlock",
@@ -107,6 +86,40 @@ export const GameAlt: GameMapping[] = [
   },
 
   {
+    badId: "league-of-legends",
+    goodId: "2437170",
+    title: "League of Legends",
+    badStatus: "Borked",
+    goodStatus: "Gold",
+    deckVerified: "Playable",
+    rating: 4.5,
+    genre: ["MOBA", "Strategy"],
+    tags: ["Strategy", "5v5", "Fantasy", "Competitive"],
+    antiCheat: {
+      name: "Vanguard",
+      status: "Kernel Hardlock",
+    },
+  },
+
+  {
+    badId: "league-of-legends",
+    goodId: "heroes-of-mewerth",
+    title: "League of Legends",
+    badStatus: "Borked",
+    goodStatus: "Native",
+    deckVerified: "Unknown",
+    rating: 4.5,
+    genre: ["MOBA", "Strategy"],
+    tags: ["Strategy", "5v5", "Fantasy", "Competitive"],
+    antiCheat: {
+      name: "Vanguard",
+      status: "Kernel Hardlock",
+    },
+    discloser:
+      "Heroes of Mewerth needs a little tweaks to working on linux. search the game in Lutris and download the linux version of the game.",
+  },
+
+  {
     badId: "2807960",
     goodId: "671860",
     title: "Battlefield 6",
@@ -115,7 +128,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Playable",
     rating: 4.5,
     genre: ["Shooter"],
-    tags: ["War", "Destruction", "Vehicles", "Large Scale"],
+    tags: ["War", "Destruction", "Military", "Vehicles", "Large Scale"],
     antiCheat: {
       name: "EA Anti-Cheat",
       status: "Incompatible",
@@ -131,7 +144,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Unsupported",
     rating: 4.5,
     genre: ["Shooter"],
-    tags: ["FPS", "Battle Royale", "Fast-Paced"],
+    tags: ["FPS", "Battle Royale", "Military", "Fast-Paced"],
     antiCheat: {
       name: "Ricochet",
       status: "Kernel Block",
@@ -148,7 +161,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Unsupported",
     rating: 4.5,
     genre: ["Shooter"],
-    tags: ["Battle Royale", "Realistic", "FPS"],
+    tags: ["Battle Royale", "Military", "Realistic", "FPS"],
     antiCheat: {
       name: "BattlEye",
       status: "Unstable",
@@ -165,7 +178,13 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Unsupported",
     rating: 4.2,
     genre: ["Shooter"],
-    tags: ["Battle Royale", "Building", "Third-Person", "Free to Play"],
+    tags: [
+      "Battle Royale",
+      "Building",
+      "Military",
+      "Third-Person",
+      "Free to Play",
+    ],
     antiCheat: {
       name: "EAC / BattlEye",
       status: "Kernel Hardlock",
@@ -182,7 +201,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Playable",
     rating: 4.7,
     genre: ["Shooter"],
-    tags: ["FPS", "Sci-fi", "Loot", "Co-op"],
+    tags: ["FPS", "Sci-fi", "Loot", "Military", "Co-op"],
     antiCheat: {
       name: "Bungie Anti-Cheat",
       status: "Unstable",
@@ -239,6 +258,22 @@ export const GameAlt: GameMapping[] = [
       alternativeFix: "Proton Compatible",
     },
   },
+  {
+    badId: "2582560",
+    goodId: "1760250",
+    title: "EA SPORTS Madden NFL 25",
+    badStatus: "Borked",
+    goodStatus: "Gold",
+    deckVerified: "Playable",
+    rating: 4.5,
+    genre: ["Sports"],
+    tags: ["Soccer", "American Football", "Simulation"],
+    antiCheat: {
+      name: "EA Anti-Cheat",
+      status: "Incompatible",
+      alternativeFix: "Proton Compatible",
+    },
+  },
 
   // {
   //   badId: "1599340",
@@ -287,7 +322,7 @@ export const GameAlt: GameMapping[] = [
     ],
     title: "GTA V",
     rating: 5,
-    discovery:
+    discloser:
       "GTA Online's implementation of BattlEye Anti-Cheat is currently not enabled for Proton, preventing access to multiplayer on Linux and Steam Deck.",
     antiCheat: {
       name: "BattlEye AntiCheat",
@@ -302,10 +337,46 @@ export const GameAlt: GameMapping[] = [
     badStatus: "Borked",
     goodStatus: "Gold",
     deckVerified: "Playable",
-    discovery:
+    discloser:
       "This Alternative applied to Forza Horizon 4 and wait for further news about Forza Horizon 6 linux support",
     genre: ["Racing"],
     tags: ["Racing", "Open World", "Automobile Sim"],
+    antiCheat: {
+      name: "BattlEye AntiCheat",
+      status: "Broke",
+    },
+  },
+
+  {
+    badId: "2537590",
+    goodId: "2014780",
+    title: "Microsoft Flight Simulator 2024",
+    badStatus: "Silver",
+    goodStatus: "Native",
+    deckVerified: "Unsupported",
+    genre: ["Simulation", "Flight", "First-Person", "Military", "Vehicles"],
+    tags: [
+      "Simulation",
+      "Flight",
+      "Realistic",
+      "VR",
+      "3D",
+      "Immersive Sim",
+      "Action-Adventure",
+      "3D Vision",
+      "First-Person",
+      "Jet",
+      "Atmospheric",
+      "Military",
+      "Controller",
+      "Relaxing",
+      "Choices Matter",
+      "Moddable",
+      "Open World",
+      "Physics",
+      "Tutorial",
+      "Co-op",
+    ],
     antiCheat: {
       name: "BattlEye AntiCheat",
       status: "Broke",
@@ -337,20 +408,72 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Playable",
     genre: ["Action", "Simulation", "Single-player"],
     tags: ["Single-player", "Stealth"],
-    discovery:
+    discloser:
       "Yandere Simulator is a unique indie title that has never been available on Steam. And to work it needs many tweaks to work on linux. There is no official statement about working the game on linux from the developer.",
   },
+
   {
-    badId: "yandere-simulator",
-    goodId: "1388880",
-    title: "Yandere Simulator",
+    badId: "genshin-impact",
+    goodId: "2064650",
+    title: "Genshin Impact",
     badStatus: "Borked",
     goodStatus: "Platinum",
     deckVerified: "Playable",
-    genre: ["Action", "Simulation", "Single-player"],
-    tags: ["Single-player", "Stealth"],
-    discovery:
-      "Yandere Simulator is a unique indie title that has never been available on Steam. And to work it needs many tweaks to work on linux. There is no official statement about working the game on linux from the developer.",
+    genre: ["Action", "RPG", "Adventure"],
+    tags: ["Open World", "RPG", "Gacha", "Action", "Adventure", "Fantasy"],
+    antiCheat: {
+      name: "HoYoprotect (mhyprot2)",
+      status: "Linux Supported",
+      alternativeFix: "Runs natively via Proton Experimental",
+    },
+  },
+
+  {
+    badId: "1671200",
+    goodId: "2064650",
+    title: "Honkai Impact 3rd",
+    badStatus: "Borked",
+    goodStatus: "Silver",
+    deckVerified: "Playable",
+    genre: ["Action", "RPG", "Free to Play"],
+    tags: ["Action", "Anime", "Hack and Slash", "Female Protagonist", "Gacha"],
+    antiCheat: {
+      name: "HoYoprotect (mhyprot2)",
+      status: "Kernel Level",
+      alternativeFix: "Proton-GE / Community Launcher",
+    },
+  },
+
+  {
+    badId: "honkai-star-rail",
+    goodId: "2064650",
+    title: "Honkai: Star Rail",
+    badStatus: "Borked",
+    goodStatus: "Gold",
+    deckVerified: "Unsupported",
+    genre: ["RPG", "Strategy", "Adventure"],
+    tags: ["Turn-Based Combat", "RPG", "Gacha", "Sci-Fi", "Anime"],
+    antiCheat: {
+      name: "HoYoprotect (ACE)",
+      status: "Kernel Hardlock",
+      alternativeFix: "Use 'The Honkers Railway Launcher' (Community)",
+    },
+  },
+
+  {
+    badId: "zenless-zone-zero",
+    goodId: "2064650",
+    title: "Zenless Zone Zero",
+    badStatus: "Borked",
+    goodStatus: "Silver",
+    deckVerified: "Unsupported",
+    genre: ["Action", "RPG"],
+    tags: ["Action", "RPG", "Gacha", "Hack and Slash", "Urban Fantasy"],
+    antiCheat: {
+      name: "HoYoprotect",
+      status: "Unstable / Blocked",
+      alternativeFix: "Community Launcher / Waydroid (Android Subsystem)",
+    },
   },
 
   {
@@ -362,7 +485,7 @@ export const GameAlt: GameMapping[] = [
     deckVerified: "Verified",
     genre: ["Action", "Simulation", "Single-player"],
     tags: ["Single-player", "Stealth"],
-    discovery:
+    discloser:
       "Yandere Simulator is a unique indie title that has never been available on Steam. And to work it needs many tweaks to work on linux. There is no official statement about working the game on linux from the developer.",
   },
 
@@ -388,7 +511,7 @@ export const GameAlt: GameMapping[] = [
     badStatus: "Borked",
     goodStatus: "Native",
     deckVerified: "Verified",
-    genre: ["Shooter", "Strategy"],
+    genre: ["Shooter", "Strategy", "Military"],
     tags: [
       "Free to Play",
       "World War II",

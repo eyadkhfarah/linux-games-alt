@@ -1,9 +1,9 @@
 "use server";
 
-import { SteamApiResponse, SteamGame } from "@/types/steam";
-import { EXTERNAL_GAMES } from "./NonSteamData"; // Ensure this path matches
+import { NonSteamGame, SteamApiResponse, } from "@/types/steam";
+import { EXTERNAL_GAMES } from "./NonSteamData";
 
-export async function getSteamGame(id: string): Promise<SteamGame | null> {
+export async function getSteamGame(id: string): Promise<NonSteamGame | null> {
   if (EXTERNAL_GAMES[id]) {
     return EXTERNAL_GAMES[id];
   }

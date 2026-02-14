@@ -1,12 +1,9 @@
-// src/components/Compare/BadGameCard.tsx
-
-import { GameMapping } from "@/lib/data";
-import { SteamGame } from "@/types/steam";
+import { GameMapping, NonSteamGame } from "@/types/steam";
 import Image from "next/image";
 import Link from "next/link";
-import { RiAlertLine, RiPulseLine } from "react-icons/ri";
+import { RiAlertLine, RiReactjsLine } from "react-icons/ri";
 
-export default function BadGameCard({ badGame, mapping }: { badGame: SteamGame, mapping?: GameMapping }) {
+export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGame, mapping?: GameMapping }) {
   const isNonSteam = badGame.steam_appid === 0;
 
   const getStatusColor = (status?: string) => {
@@ -23,9 +20,9 @@ export default function BadGameCard({ badGame, mapping }: { badGame: SteamGame, 
       </div>
       <Image
         width={600}
-        height={300}
+        height={800}
         src={badGame.header_image}
-        className="w-full h-48 object-cover rounded-2xl mb-6 shadow-2xl grayscale opacity-80 ring-1 ring-red-500/30"
+        className="w-full object-cover rounded-2xl mb-6 shadow-2xl grayscale opacity-80 ring-1 ring-red-500/30"
         alt={badGame.name}
       />
 
@@ -35,12 +32,9 @@ export default function BadGameCard({ badGame, mapping }: { badGame: SteamGame, 
         </h2>
 
         <div className="flex gap-2 mt-2">
-          {badGame.genres?.slice(0, 2).map((g) => (
-            <span
-              key={g.id}
-              className="text-[9px] border border-red-500/20 bg-red-500/10 px-2 py-0.5 rounded text-red-300 font-bold uppercase"
-            >
-              {g.description}
+          {badGame.genres?.slice(0, 3).map((genre, i) => (
+            <span key={i} className="text-[9px] font-black uppercase tracking-widest text-zinc-500 border border-zinc-500/20 px-2 py-0.5 rounded">
+              {genre.description}
             </span>
           ))}
         </div>
@@ -105,7 +99,7 @@ export default function BadGameCard({ badGame, mapping }: { badGame: SteamGame, 
             target="_blank"
             className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all"
           >
-            <RiPulseLine size={16} className="text-red-400" /> View status in
+            <RiReactjsLine size={16} className="text-red-400" /> View status in
             protondb
           </Link>
         )}

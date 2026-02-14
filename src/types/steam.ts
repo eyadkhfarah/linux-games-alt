@@ -1,21 +1,46 @@
 interface SteamGenre {
-  id: string;
+  id: number;
   description: string;
 }
 
-export interface SteamGame {
+export interface GameMapping {
+  badId: string;
+  goodId: string;
+  title: string;
+  genre: string[];
+  tags: string[];
+  discloser?: string;
+  officialUrl?: string;
+  badStatus: "Borked" | "Bronze" | "Silver";
+  goodStatus: "Native" | "Platinum" | "Gold" | "Silver";
+  deckVerified: "Verified" | "Playable" | "Unsupported" | "Unknown";
+  rating?: number;
+  customData?: {
+    name: string;
+    imageUrl: string;
+    publisher: string;
+  };
+  antiCheat?: {
+    name: string;
+    status: string;
+    alternativeFix?: string;
+  };
+}
+
+export interface NonSteamGame {
   genres: SteamGenre[];
   platforms: { windows: boolean; mac: boolean; linux: boolean };
   publishers: string[];
   developers: string[];
   is_free: boolean;
-  type: string
+  type: string;
   steam_appid: number;
   required_age: number;
   name: string;
   header_image: string;
+  officialUrl: string;
   short_description: string;
-  categories: Array<{ id: number; description: string }>;
+  tags: string[];
   pc_requirements: { minimum: string; recommended: string };
   release_date: { coming_soon: boolean; date: string };
   price_overview?: {
@@ -29,6 +54,6 @@ export interface SteamGame {
 export interface SteamApiResponse {
   [key: string]: {
     success: boolean;
-    data: SteamGame;
+    data: NonSteamGame;
   };
 }

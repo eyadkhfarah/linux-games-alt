@@ -1,5 +1,4 @@
-import { GameMapping } from "@/lib/data";
-import { SteamGame } from "@/types/steam";
+import { GameMapping, NonSteamGame } from "@/types/steam";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -76,7 +75,7 @@ export default function GoodGameCard({
   mapping,
   deckVerified,
 }: {
-  goodGame: SteamGame;
+  goodGame: NonSteamGame;
   mapping?: GameMapping;
   deckVerified?: string;
 }) {
@@ -90,9 +89,9 @@ export default function GoodGameCard({
 
       <Image
         width={600}
-        height={300}
+        height={800}
         src={goodGame.header_image}
-        className="w-full h-48 object-cover rounded-2xl mb-6 shadow-2xl ring-1 ring-indigo-500/30"
+        className="w-full object-cover rounded-2xl mb-6 shadow-2xl ring-1 ring-indigo-500/30"
         alt={goodGame.name}
       />
 
@@ -101,9 +100,9 @@ export default function GoodGameCard({
           {goodGame.name}
         </h2>
         <div className="flex gap-2 mt-2">
-          {goodGame.genres?.slice(0, 2).map((g) => (
+          {goodGame.genres?.slice(0, 2).map((g,i) => (
             <span
-              key={g.id}
+              key={i}
               className="text-[9px] border border-indigo-500/20 bg-indigo-500/10 px-2 py-0.5 rounded text-indigo-300 font-bold uppercase"
             >
               {g.description}
@@ -112,7 +111,6 @@ export default function GoodGameCard({
         </div>
       </div>
 
-      {/* Pricing and Rating Grid */}
       <div className="grid grid-cols-2 gap-2 mb-6">
         <div className="bg-indigo-500/10 p-3 rounded-xl border border-indigo-500/20 relative overflow-hidden group">
           <div className="absolute inset-0 bg-indigo-500/5 animate-pulse" />
@@ -166,32 +164,46 @@ export default function GoodGameCard({
         </div>
       </div>
 
-      {/* Buttons: Non-Steam Aware */}
       <div className="grid grid-cols-2 gap-3 mt-6">
         <Link
           href={
-            isNonSteam
-              ? `https://www.google.com/search?q=${goodGame.name}+official+site`
-              : `https://store.steampowered.com/app/${goodGame.steam_appid}`
+            goodGame.officialUrl
+              ? goodGame.officialUrl
+              :
+                isNonSteam
+                ? `https://www.google.com/search?q=${encodeURIComponent(goodGame.name)}+official+site`
+                :
+                  `steam://run/${goodGame.steam_appid}`
           }
           target="_blank"
           className="flex items-center justify-center gap-2 py-3 rounded-xl bg-indigo-600 text-[10px] font-black uppercase tracking-widest hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-600/30"
         >
-          {isNonSteam ? (
+          {isNonSteam || goodGame.officialUrl ? (
             <RiExternalLinkLine size={16} />
           ) : (
             <RiDownload2Line size={16} />
           )}
-          {isNonSteam ? "Official Site" : "Install Game"}
+          {goodGame.officialUrl
+            ? "Official Site"
+            : isNonSteam
+              ? "Visit Site"
+              : "Install Game"}
         </Link>
-
-        {!isNonSteam && (
+        {!isNonSteam ? (
           <Link
             href={`https://www.protondb.com/app/${goodGame.steam_appid}`}
             target="_blank"
             className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all"
           >
             <RiPulseLine size={16} className="text-indigo-500" /> Database
+          </Link>
+        ) : (
+          <Link
+            href={`https://store.steampowered.com/search/?term=${encodeURIComponent(goodGame.name)}`}
+            target="_blank"
+            className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all text-zinc-400"
+          >
+            <RiExternalLinkLine size={16} /> Check Steam
           </Link>
         )}
       </div>
