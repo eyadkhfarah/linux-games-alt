@@ -1,7 +1,24 @@
 import { GameMapping, NonSteamGame } from "@/types/steam";
 import Image from "next/image";
 import Link from "next/link";
-import { RiAlertLine, RiReactjsLine } from "react-icons/ri";
+import { RiAlertLine, RiReactjsLine, RiShieldKeyholeLine } from "react-icons/ri";
+
+const AntiCheatBadge = ({ status }: { status?: string }) => {
+    if (!status) return null;
+    const isBypassable =
+      status.toLowerCase().includes("easy") ||
+      status.toLowerCase().includes("battleye");
+  
+    return (
+      <div
+        className={`flex items-center gap-1 px-2 py-0.5 rounded-md border font-bold uppercase
+        ${isBypassable ? "bg-amber-500/10 border-amber-500/20 text-amber-400" : "bg-red-500/10 border-red-500/20 text-red-400"}`}
+      >
+        <RiShieldKeyholeLine size={12} />
+        <span>{status}</span>
+      </div>
+    );
+  };
 
 export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGame, mapping?: GameMapping }) {
   const isNonSteam = badGame.steam_appid === 0;
@@ -22,7 +39,7 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
         width={600}
         height={800}
         src={badGame.header_image}
-        className="w-full object-cover rounded-2xl mb-6 shadow-2xl grayscale opacity-80 ring-1 ring-red-500/30"
+        className="w-full h-62 object-cover rounded-2xl mb-6 shadow-2xl grayscale opacity-80 ring-1 ring-red-500/30"
         alt={badGame.name}
       />
 
@@ -85,6 +102,11 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
           <span className={`px-2 py-0.5 rounded border ${getStatusColor(mapping?.badStatus)}`}>
             {mapping?.badStatus ?? "???"}
           </span>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-white/5 pb-2">
+          <span className="text-zinc-500">Anti-Cheat Technology</span>
+          <AntiCheatBadge status={mapping?.antiCheat?.name} />
         </div>
       </div>
 

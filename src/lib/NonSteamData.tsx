@@ -82,6 +82,41 @@ export const EXTERNAL_GAMES: Record<string, NonSteamGame> = {
     },
   },
 
+  "2xko": {
+    type: "game",
+    name: "2XKO",
+    steam_appid: 0,
+    required_age: 12,
+    is_free: true,
+    officialUrl: "https://2xko.riotgames.com/",
+    header_image:
+      "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25298258/2XKO_KeyArt_Ahri_Ekko_1920x1080_Final__1_.png",
+    short_description:
+      "2XKO is a free-to-play 2v2 tag-team fighting game by Riot Games. Master the tag system with champions from League of Legends' Runeterra universe. Features accessible mechanics with high competitive skill cap and full crossplay.",
+    developers: ["Riot Games"],
+    publishers: ["Riot Games"],
+    platforms: { windows: true, mac: false, linux: false },
+    metacritic: { score: 0 },
+    tags: [
+      "Fighting",
+      "Competitive",
+      "2v2",
+      "Tag-Team",
+      "Free to Play",
+      "Multiplayer",
+      "League of Legends",
+    ],
+    genres: [
+      { id: 1, description: "Action" },
+      { id: 2, description: "Free to Play" },
+    ],
+    release_date: { coming_soon: false, date: "07 Oct, 2025 (Early Access), 20 Jan, 2026 (Full)" },
+    pc_requirements: {
+      minimum: "Intel Core i5-4460 or AMD FX-6300, 4GB RAM, GTX 960 or equivalent",
+      recommended: "Intel Core i7-8700K or AMD Ryzen 5 2600X, 8GB RAM, GTX 1070 or equivalent",
+    },
+  },
+
   "heroes-of-newerth": {
     type: "game",
     name: "Heroes of Newerth",

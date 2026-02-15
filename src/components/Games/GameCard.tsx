@@ -93,7 +93,7 @@ export default async function GameCard({
             <AntiCheatBadge status={antiCheat} />
 
             {disclosure ? (
-              <div className="mt-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 -translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
+              <div className="mt-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 -translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 group-focus:translate-x-0 transition-all">
                 <RiErrorWarningLine
                   size={14}
                   className="text-amber-500 animate-pulse"
@@ -135,7 +135,7 @@ export default async function GameCard({
                 : goodGame.price_overview?.final_formatted || "N/A"}
             </div>
                 
-            <div className="mt-2 flex items-center justify-end gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
+            <div className="mt-2 flex items-center justify-end gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 group-focus:translate-x-0 transition-all">
               <span className="text-indigo-500">View The Game</span>
               <RiGamepadLine size={12} className="text-indigo-500" />
             </div>

@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "bleedingcool.com" },
       { protocol: "https", hostname: "areweanticheatyet.com" },
       { protocol: "https", hostname: "cdn2.steamgriddb.com" },
+      { protocol: "https", hostname: "platform.theverge.com" },
     ]
   }
 };
