@@ -40,7 +40,7 @@ export default function ContactPage() {
     ],
   };
 
-  const { discord, github, x } = Contact;
+  const { discord, github, x, email } = Contact;
 
   return (
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden text-white bg-zinc-950 py-20 px-6">
@@ -72,8 +72,8 @@ export default function ContactPage() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-xl text-zinc-400 font-medium leading-relaxed">
-            Direct access to the developers, community patches, and
-            real-time compatibility reports for Linux gamers.
+            Direct access to the developers, community patches, and real-time
+            compatibility reports for Linux gamers.
           </p>
         </header>
 
@@ -90,20 +90,24 @@ export default function ContactPage() {
             <div className="relative z-10 flex flex-col w-full items-center md:items-start text-center md:text-left">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-12 w-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-600/40">
-                  <RiDiscordFill size={24} className="text-white animate-pulse" />
+                  <RiDiscordFill
+                    size={24}
+                    className="text-white animate-pulse"
+                  />
                 </div>
                 <span className="text-xs font-black uppercase tracking-widest text-indigo-400">
                   Official Server
                 </span>
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-blacked text-white uppercase tracking-wider mb-4 italic">
                 Join the <span className="text-indigo-500">Nexus</span>
               </h2>
               <p className="text-zinc-400 max-w-sm leading-relaxed mb-8">
-                Establish a direct connection. Report findings, request dossiers, and sync with the squad.
+                Establish a direct connection. Report findings, request
+                dossiers, and sync with the squad.
               </p>
-              
+
               <div className="PrimaryBtn z-20">
                 Connect To Discord <RiExternalLinkLine />
               </div>
@@ -116,16 +120,16 @@ export default function ContactPage() {
           </Link>
         </div>
 
-        {/* Secondary Contact Nodes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Direct Signal Card */}
           <section className="relative group p-10 rounded-[2.5rem] bg-white/3 border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between">
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
             <div className="relative mb-8">
               <div className="h-14 w-14 bg-zinc-900 border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl">
-                <TbMail size={28} className="text-zinc-400 group-hover:text-indigo-500 transition-colors" />
+                <TbMail
+                  size={28}
+                  className="text-zinc-400 group-hover:text-indigo-500 transition-colors"
+                />
               </div>
             </div>
 
@@ -134,23 +138,30 @@ export default function ContactPage() {
                 Direct <span className="text-white">Signal</span>
               </h2>
               <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
-                For professional inquiries, security reports, or partnership technicals regarding Linux Games Alt.
+                For professional inquiries, security reports, or partnership
+                technicals regarding Linux Games Alt.
               </p>
-              
+
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-900/50 border border-white/5 w-fit">
-                <RiMailSendLine size={16} className="text-indigo-500" />
-                <span className="font-bold text-[0.7rem] text-zinc-500 uppercase tracking-widest italic">
-                  Email relay temporarily offline
-                </span>
+                <Link
+                  href={email}
+                  target="_blank"
+                  className="flex items-center gap-2 px-4 py-3 text-[0.7rem] rounded-xl bg-white/5 border border-white/5 font-bold text-zinc-300 uppercase tracking-widest hover:bg-white/10 hover:text-white transition-all"
+                >
+                  <RiMailSendLine size={16} className="text-indigo-500" />
+                  Contact via Email
+                </Link>
               </div>
             </div>
           </section>
 
           <section className="relative group p-10 rounded-[2.5rem] bg-white/3 border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between">
-
             <div className="relative mb-8 flex justify-between items-start">
               <div className="h-14 w-14 bg-zinc-900 border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl">
-                <RiMessage3Line size={28} className="text-zinc-400 group-hover:text-indigo-500 transition-colors" />
+                <RiMessage3Line
+                  size={28}
+                  className="text-zinc-400 group-hover:text-indigo-500 transition-colors"
+                />
               </div>
             </div>
 
@@ -159,9 +170,10 @@ export default function ContactPage() {
                 Social <span className="text-white">Feed</span>
               </h2>
               <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
-                Follow our deployment logs, database additions, and update history on our social nodes.
+                Follow our deployment logs, database additions, and update
+                history on our social nodes.
               </p>
-              
+
               <div className="flex gap-4">
                 <Link
                   href={x}
@@ -180,7 +192,6 @@ export default function ContactPage() {
               </div>
             </div>
           </section>
-
         </div>
       </div>
     </main>

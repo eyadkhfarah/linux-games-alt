@@ -16,11 +16,11 @@ const siteUrl =
 
 export const metadata: Metadata = {
   title: {
-    default: "Linux Games Alt | Best Gaming Alternatives",
+    default: "Linux Games Alt | Best Linux Games Alternatives",
     template: "%s | Linux Games Alt",
   },
   description:
-    "Deploy superior gaming alternatives. Verify anti-cheat compatibility, Proton tiers, and tactical game data for Linux and Steam Deck.",
+    "Linux game alternatives directory. 100+ Windows-blocked games with anti-cheat analysis, Proton compatibility tiers, native replacements, and Steam Deck ratings.",
   keywords: [
     "Gaming Alternatives",
     "Anti-cheat Compatibility",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Linux Games Alt",
     description:
-      "Deploy superior gaming alternatives with verified compatibility.",
+      "Find Linux-compatible gaming alternatives with verified anti-cheat compatibility, Proton tiers, and Steam Deck ratings.",
     creator: "@linuxgamesalt",
     images: ["/main.webp"],
   },
