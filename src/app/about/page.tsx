@@ -46,7 +46,7 @@ export default function About() {
 
       <div className="relative z-10 max-w-7xl w-full px-6">
         <header className="mb-20 text-center">
-          <h1 className="text-6xl text-white md:text-8xl font-black uppercase tracking-tighter mb-8 italic">
+          <h1 className="text-6xl text-white md:text-8xl font-black uppercase tracking-wide mb-8 italic">
             THE <span className="text-indigo-500">MISSION</span>
           </h1>
 
@@ -57,7 +57,6 @@ export default function About() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* SECTION 1: ARCHIVE STATS */}
           <section className="relative group p-10 rounded-[2.5rem] bg-white/3 border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between">
             <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -71,13 +70,13 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase tracking-tight mb-6">
+              <h2 className="text-2xl font-black uppercase tracking-wider mb-6">
                 Archive <span className="text-indigo-500">Integrity</span>
               </h2>
 
               <div className="flex items-center gap-6">
                 <div>
-                  <span className="block text-4xl font-black italic text-white leading-none">
+                  <span className="block text-4xl font-bold italic text-white leading-none">
                     +{totalRedirects}
                   </span>
                   <span className="text-[9px] font-black uppercase tracking-[0.3em] text-indigo-400">
@@ -86,7 +85,7 @@ export default function About() {
                 </div>
                 <div className="w-px h-10 bg-white/10" />
                 <div>
-                  <span className="block text-4xl font-black italic text-white leading-none">
+                  <span className="block text-4xl font-bold italic text-white leading-none">
                     100%
                   </span>
                   <span className="text-[9px] font-black uppercase tracking-[0.3em] text-indigo-400">
@@ -108,14 +107,14 @@ export default function About() {
                 href="https://www.protondb.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:text-white transition-colors"
+                className="group/btn flex items-center gap-2 text-[10px] font-bold uppercase text-zinc-500 hover:text-white transition-colors"
               >
                 ProtonDB <RiExternalLinkLine size={16} />
               </Link>
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase tracking-tight mb-4">
+              <h2 className="text-2xl font-black uppercase tracking-wider mb-4">
                 Telemetry <span className="text-indigo-500">Sync</span>
               </h2>
               <p className="text-zinc-400 text-sm leading-relaxed">
@@ -124,8 +123,7 @@ export default function About() {
               </p>
             </div>
           </section>
-
-          {/* SECTION 3: SYSTEM PROTOCOLS */}
+          
           <section className="relative group p-10 rounded-[2.5rem] bg-white/3 border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between">
             <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -136,7 +134,7 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase tracking-tight mb-6">
+              <h2 className="text-2xl font-black uppercase tracking-wider mb-6">
                 System <span className="text-indigo-500">Specs</span>
               </h2>
               <ul className="space-y-3">
@@ -163,7 +161,7 @@ export default function About() {
         <div className="my-20">
           <div className="flex items-center gap-3 px-2 mb-6">
             <div className="h-px flex-1 bg-linear-to-r from-indigo-500/50 to-transparent" />
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500">
+            <span className="text-[10px] font-black uppercase tracking-wider text-zinc-500">
               Other resources we ues
             </span>
             <div className="h-px flex-1 bg-linear-to-l from-indigo-500/50 to-transparent" />
@@ -244,7 +242,7 @@ export default function About() {
                     )}
                   </div>
 
-                  <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors text-center leading-tight">
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors text-center leading-tight">
                     {resource.name}
                   </span>
 
@@ -264,7 +262,7 @@ export default function About() {
               <SiSteam size={26} className="text-zinc-500" />
             </div>
             <div>
-              <h3 className="text-sm font-black uppercase tracking-widest text-white mb-1">
+              <h3 className="text-2xl font-black uppercase tracking-widest text-white mb-1">
                 Data Source Declaration
               </h3>
               <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em]">

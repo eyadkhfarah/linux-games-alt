@@ -101,7 +101,7 @@ export default function FilterDrawer() {
   return (
     <Sheet open={isOpen} onOpenChange={handleOpenChange}>
       <SheetTrigger asChild>
-        <button className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-indigo-500/50 transition-all cursor-pointer font-black uppercase tracking-widest text-[10px] text-zinc-300">
+        <button className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-indigo-500/50 transition-all cursor-pointer font-bold uppercase tracking-widest text-[10px] text-zinc-300">
           <RiFilter2Line size={16} className="text-indigo-500" />
           Open Filters
           {activeFiltersCount > 0 && (
@@ -120,14 +120,14 @@ export default function FilterDrawer() {
           <SheetTitle className="flex items-center justify-between text-left">
             <div className="flex items-center gap-2">
               <RiFilter2Line className="text-indigo-500" />
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-white">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Games Filters
               </span>
             </div>
             {draftFiltersCount > 0 && (
               <button
                 onClick={resetDraftFilters}
-                className="text-[10px] cursor-pointer font-black uppercase tracking-widest text-red-500 hover:text-red-400 transition-colors flex items-center gap-1"
+                className="text-[10px] cursor-pointer font-bold uppercase tracking-widest text-red-500 hover:text-red-400 transition-colors flex items-center gap-1"
               >
                 <RiCloseCircleLine size={14} />
                 reset
@@ -138,7 +138,7 @@ export default function FilterDrawer() {
 
         <div className="flex flex-col px-8 gap-8 flex-1 overflow-y-auto pb-4">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 px-2 font-black uppercase tracking-[0.3em] text-zinc-500">
+            <div className="flex items-center gap-2 px-2 font-bold uppercase tracking-[0.3em] text-zinc-500">
               <RiFilter3Line className="text-indigo-500" />
               <span className="text-[10px]">Genre Sector</span>
             </div>
@@ -146,7 +146,7 @@ export default function FilterDrawer() {
               <select
                 value={draftFilters.genre}
                 onChange={(e) => updateDraftFilter("genre", e.target.value)}
-                className="w-full appearance-none bg-white/5 border border-white/10 text-zinc-300 px-4 py-4 rounded-xl text-xs font-black uppercase tracking-widest cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+                className="w-full appearance-none bg-white/5 border border-white/10 text-zinc-300 px-4 py-4 rounded-xl text-xs font-bold uppercase tracking-widest cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
               >
                 {genres.map((genre) => (
                   <option
@@ -166,7 +166,7 @@ export default function FilterDrawer() {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-2 px-2 font-black uppercase tracking-[0.3em] text-zinc-500">
+            <div className="flex items-center gap-2 px-2 font-bold uppercase tracking-[0.3em] text-zinc-500">
               <SiSteamdeck className="text-emerald-500" />
               <span className="text-[10px]">Deck Verification</span>
             </div>
@@ -175,7 +175,7 @@ export default function FilterDrawer() {
                 <button
                   key={status}
                   onClick={() => updateDraftFilter("deck", status)}
-                  className={`text-xs font-black uppercase py-3 px-4 rounded-xl border transition-all cursor-pointer text-center ${
+                  className={`text-xs font-bold uppercase py-3 px-4 rounded-xl border transition-all cursor-pointer text-center ${
                     draftFilters.deck === status
                       ? "bg-emerald-500/20 border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.1)]"
                       : "bg-white/5 border-white/10 text-zinc-500 hover:border-white/20"
@@ -188,7 +188,7 @@ export default function FilterDrawer() {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-2 px-2 font-black uppercase tracking-[0.3em] text-zinc-500">
+            <div className="flex items-center gap-2 px-2 font-bold uppercase tracking-[0.3em] text-zinc-500">
               <RiPulseFill className="text-indigo-500" />
               <span className="text-[10px]">Alternative Status</span>
             </div>
@@ -197,7 +197,7 @@ export default function FilterDrawer() {
                 <button
                   key={status}
                   onClick={() => updateDraftFilter("proton", status)}
-                  className={`text-[10px] font-black uppercase py-3 px-3 rounded-xl border transition-all cursor-pointer text-center ${
+                  className={`text-[10px] font-bold uppercase py-3 px-3 rounded-xl border transition-all cursor-pointer text-center ${
                     draftFilters.proton === status
                       ? "bg-indigo-500 border-indigo-400 text-white shadow-lg shadow-indigo-500/20"
                       : "bg-white/5 border-white/10 text-zinc-500 hover:border-white/20 hover:text-zinc-300"
@@ -213,7 +213,7 @@ export default function FilterDrawer() {
         <SheetFooter className="mt-8 pt-6 m-8 border-t border-white/10 flex-col sm:flex-row gap-3 sm:space-x-0 shrink-0">
           <button
             onClick={applyFilters}
-            className="flex-2 flex items-center justify-center gap-2 text-[10px] font-black uppercase py-4 px-4 rounded-xl bg-indigo-500 text-white hover:bg-indigo-400 transition-all shadow-lg shadow-indigo-500/20"
+            className="flex-2 flex items-center justify-center gap-2 text-[10px] font-bold uppercase py-4 px-4 rounded-xl bg-indigo-500 text-white hover:bg-indigo-400 transition-all shadow-lg shadow-indigo-500/20"
           >
             <RiCheckDoubleFill size={16} />
             Apply Filters
@@ -224,7 +224,7 @@ export default function FilterDrawer() {
             )}
           </button>
           <SheetClose asChild>
-            <button className="flex-1 text-[10px] font-black uppercase py-4 px-4 rounded-xl border border-white/10 bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white transition-all">
+            <button className="flex-1 text-[10px] font-bold uppercase py-4 px-4 rounded-xl border border-white/10 bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white transition-all">
               Cancel
             </button>
           </SheetClose>

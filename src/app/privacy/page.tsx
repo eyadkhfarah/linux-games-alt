@@ -48,7 +48,7 @@ export default function PrivacyPage() {
 
       <div className="absolute top-0 left-0 w-full h-96 bg-linear-to-b from-indigo-500/5 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
               <span className="h-px w-12 bg-indigo-500"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">Information Security</span>
             </div>
-            <h1 className="text-5xl md:text-7xl text-white font-black uppercase tracking-tighter leading-none">
+            <h1 className="text-5xl md:text-8xl text-white font-black uppercase leading-none">
               Privacy <span className="text-zinc-600">Protocol</span>
             </h1>
           </div>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
                 <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center group-hover:border-indigo-500/30 transition-all">
                   {React.cloneElement(section.icon as React.ReactElement)}
                 </div>
-                <h3 className="text-lg font-black text-white uppercase tracking-tight italic">{section.title}</h3>
+                <h3 className="text-2xl font-black text-white uppercase italic">{section.title}</h3>
               </div>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 {section.content}
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 border-t border-white/5">
           <section className="p-8 rounded-3xl bg-white/1 border border-white/5">
-            <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-4">
+            <h4 className="flex items-center gap-2 text-md font-black uppercase tracking-widest text-zinc-500 mb-4">
               <RiGlobalLine size={14} className="text-indigo-400" /> External Node Access
             </h4>
             <p className="text-xs text-zinc-500 leading-relaxed">
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
           </section>
           
           <section className="p-8 rounded-3xl bg-white/1 border border-white/5">
-            <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-4">
+            <h4 className="flex items-center gap-2 text-md font-black uppercase tracking-widest text-zinc-500 mb-4">
               <RiShieldUserLine size={14} className="text-indigo-400" /> Agent Autonomy
             </h4>
             <p className="text-xs text-zinc-500 leading-relaxed">

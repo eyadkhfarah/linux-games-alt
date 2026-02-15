@@ -68,7 +68,7 @@ export default async function BrowsePage({ searchParams }: PageProps) {
 
         <div className="flex-1 w-full">
           <div className="mb-8 md:flex hidden items-center gap-4 px-2">
-            <span className="text-xs px-3 py-2 rounded-full font-black bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 uppercase tracking-widest">
+            <span className="text-xs px-3 py-2 rounded-full font-bold bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 uppercase tracking-widest">
               {filteredGames.length} Matches Found
             </span>
             <div className="hidden sm:block h-px w-24 bg-white/10" />

@@ -46,7 +46,7 @@ export default function TermsPage() {
       
       <div className="absolute top-0 right-0 w-full h-96 bg-linear-to-b from-indigo-500/5 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
@@ -54,7 +54,7 @@ export default function TermsPage() {
               <span className="h-px w-12 bg-indigo-500"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">Legal Documentation</span>
             </div>
-            <h1 className="text-5xl text-white md:text-8xl font-black uppercase tracking-tighter leading-none italic">
+            <h1 className="text-5xl text-white md:text-8xl font-black uppercase leading-none italic">
               TERMS <span className="text-zinc-600">&</span> CONDITIONS
             </h1>
           </div>
@@ -71,7 +71,7 @@ export default function TermsPage() {
                 <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center group-hover:border-indigo-500/30 transition-all">
                   {React.cloneElement(clause.icon as React.ReactElement)}
                 </div>
-                <h3 className="text-lg font-black text-white uppercase tracking-tight italic">{clause.title}</h3>
+                <h3 className="text-2xl font-black text-white uppercase italic">{clause.title}</h3>
               </div>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 {clause.content}
@@ -83,7 +83,7 @@ export default function TermsPage() {
         <div className="p-8 rounded-3xl bg-indigo-500/5 border border-indigo-500/20 flex items-start gap-6">
           <RiErrorWarningLine size={40} className="text-indigo-400 shrink-0" />
           <div>
-            <h4 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-2">Final Provision</h4>
+            <h4 className="text-2xl font-black uppercase tracking-widest text-indigo-400 mb-2">Final Provision</h4>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-3xl">
               Linux Games Alt reserves the right to modify these parameters at any time. Continuous engagement with our services constitutes an acceptance of all updated protocols. 
             </p>

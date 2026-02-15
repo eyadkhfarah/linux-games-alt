@@ -32,7 +32,7 @@ const DeckStatusBadge = ({ status }: { status?: string }) => {
   const { icon: Icon, color, bg, border } = config[status as keyof typeof config];
 
   return (
-    <div className={`flex items-center gap-1 px-2 py-0.5 rounded-md border ${bg} ${border} ${color} text-[9px] font-black uppercase tracking-tighter`}>
+    <div className={`flex items-center gap-1 px-2 py-0.5 rounded-md border ${bg} ${border} ${color} text-[9px] font-bold uppercase`}>
       <Icon size={12} />
       <span>Deck {status}</span>
     </div>
@@ -47,7 +47,7 @@ const AntiCheatBadge = ({ status }: { status?: string }) => {
 
   return (
     <div
-      className={`mt-2 flex items-center w-fit gap-1.5 px-2 py-0.5 rounded-md border text-[10px] font-black uppercase tracking-tighter
+      className={`mt-2 flex items-center w-fit gap-1.5 px-2 py-0.5 rounded-md border text-[10px] font-bold uppercase
       ${isBypassable ? "bg-amber-500/10 border-amber-500/20 text-amber-400" : "bg-red-500/10 border-red-500/20 text-red-400"}`}
     >
       <RiShieldKeyholeLine size={12} />
@@ -87,13 +87,13 @@ export default async function GameCard({
             />
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="font-black text-zinc-300 truncate text-lg uppercase tracking-tighter">
+            <h3 className="font-bold text-zinc-300 truncate text-lg uppercase">
               {badGame.name}
             </h3>
             <AntiCheatBadge status={antiCheat} />
 
             {disclosure ? (
-              <div className="mt-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest opacity-0 -translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
+              <div className="mt-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 -translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
                 <RiErrorWarningLine
                   size={14}
                   className="text-amber-500 animate-pulse"
@@ -114,7 +114,7 @@ export default async function GameCard({
               size={28}
             />
           </div>
-          <div className="mt-2 text-[8px] font-black uppercase tracking-[0.3em] text-zinc-500 group-hover:text-indigo-500 group-focus:text-indigo-500 transition-colors">
+          <div className="mt-2 text-[8px] font-bold uppercase tracking-[0.3em] text-zinc-500 group-hover:text-indigo-500 group-focus:text-indigo-500 transition-colors">
             Alternative
           </div>
         </div>
@@ -123,7 +123,7 @@ export default async function GameCard({
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-end gap-2 mb-1">
               <DeckStatusBadge status={deckStatus} />
-              <h3 className="font-black text-white truncate text-lg tracking-tighter uppercase italic">
+              <h3 className="font-bold text-white truncate text-lg uppercase italic">
                 {goodGame.name}
               </h3>
             </div>
@@ -135,7 +135,7 @@ export default async function GameCard({
                 : goodGame.price_overview?.final_formatted || "N/A"}
             </div>
                 
-            <div className="mt-2 flex items-center justify-end gap-1.5 text-[10px] font-black uppercase tracking-widest opacity-0 translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
+            <div className="mt-2 flex items-center justify-end gap-1.5 text-[10px] font-bold uppercase tracking-widest opacity-0 translate-x-4 group-hover:opacity-100 group-focus:opacity-100 group-hover:translate-x-0 transition-all">
               <span className="text-indigo-500">View The Game</span>
               <RiGamepadLine size={12} className="text-indigo-500" />
             </div>

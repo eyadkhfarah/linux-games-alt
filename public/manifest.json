@@ -1,6 +1,6 @@
 {
   "name": "Linux Games Alt",
-  "short_name": "Linux Games Alt",
+  "short_name": "LinuxGamesAlt",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,6 +16,6 @@
     }
   ],
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "background_color": "#172130",
   "display": "standalone"
 }

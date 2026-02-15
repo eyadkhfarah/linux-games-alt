@@ -34,7 +34,7 @@ export default function FQA() {
               aria-expanded={isOpen}
             >
               <span
-                className={`text-lg md:text-xl uppercase italic font-black tracking-tight transition-colors duration-300 pr-8 ${
+                className={`text-2xl md:text-3xl uppercase italic font-black tracking-wider transition-colors duration-300 pr-8 ${
                   isOpen ? "text-indigo-500" : "text-zinc-200"
                 }`}
               >

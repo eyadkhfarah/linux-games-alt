@@ -27,7 +27,7 @@ export default function BrowseLayout({
         <header className="relative my-16">
           <div className="flex flex-col mt-14 md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-3xl">
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase mb-6">
+              <h1 className="text-6xl md:text-8xl font-black tracking-wide leading-none uppercase mb-6">
                 THE <span className="text-indigo-500">LIBRARY</span>
               </h1>
               <p className="text-xl text-zinc-400 font-medium leading-relaxed">

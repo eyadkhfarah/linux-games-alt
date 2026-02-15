@@ -10,12 +10,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-3 group transition-opacity"
         >
           <Image src="/Logo.svg" alt="Logo" width={52} height={52} className="rounded-sm" />
           <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-white leading-none">
-              LINUX GAMES<span className="text-indigo-400">ALT</span>
+            <span className="text-2xl font-blacked tracking-wider group-hover:text-indigo-500 transition-colors duration-300 text-white leading-none">
+              LINUX GAMES<span className="text-indigo-500">ALT</span>
             </span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
               Linux Gaming Intel
@@ -38,14 +38,14 @@ export default function Navbar() {
           </div>
           <Link
             href={Contact.github}
-            className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
+            className="p-2.5 SecondaryBtn"
           >
             <RiGithubFill size={20} />
           </Link>
 
           <Link
             href={Contact.discord}
-            className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-indigo-600/20"
+            className="px-5 py-2.5 PrimaryBtn text-sm font-bold"
           >
             <RiDiscordFill size={18} />
             <span className="hidden sm:inline">Join Community</span>

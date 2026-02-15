@@ -68,9 +68,9 @@ export default async function ComparisonPage({ params }: PageProps) {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-14 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14">
         <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-none">
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-wide italic leading-none">
             Viable{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500">
               Alternative
@@ -108,7 +108,7 @@ export default async function ComparisonPage({ params }: PageProps) {
           <div className="p-8 rounded-3xl bg-white/2 border border-white/5">
             <div className="flex items-center gap-2 mb-4">
               <RiGroupLine className="text-red-500" />
-              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500/60">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-red-500/60">
                 Unsupported Game Description
               </h3>
             </div>
@@ -121,7 +121,7 @@ export default async function ComparisonPage({ params }: PageProps) {
           <div className="p-8 rounded-3xl bg-indigo-500/3 border border-indigo-500/10">
             <div className="flex items-center gap-2 mb-4">
               <RiComputerLine className="text-indigo-500 animate-pulse" />
-              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-500">
                 Alternative Game
               </h3>
             </div>

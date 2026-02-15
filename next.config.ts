@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "i.postimg.cc" },
       { protocol: "https", hostname: "wiki.leagueoflegends.com" },
       { protocol: "https", hostname: "bleedingcool.com" },
+      { protocol: "https", hostname: "areweanticheatyet.com" },
       { protocol: "https", hostname: "cdn2.steamgriddb.com" },
     ]
   }

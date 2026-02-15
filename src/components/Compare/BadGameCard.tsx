@@ -15,7 +15,7 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
 
   return (
     <div className="relative group p-6 rounded-4xl border border-red-500/20 bg-red-500/2 backdrop-blur-3xl">
-      <div className="absolute top-0 left-0 px-4 py-1 bg-red-600 text-white text-[9px] font-black uppercase tracking-widest italic rounded-br-xl flex gap-2 items-center">
+      <div className="absolute top-0 left-0 px-4 py-1 bg-red-600 text-white text-[9px] font-bold uppercase tracking-widest italic rounded-br-xl flex gap-2 items-center">
         <RiAlertLine /> {mapping?.badStatus || "Restricted"}
       </div>
       <Image
@@ -27,13 +27,13 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
       />
 
       <div className="mb-6">
-        <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-400 leading-none">
+        <h2 className="text-4xl font-black uppercase tracking-wide text-zinc-400 leading-none">
           {badGame.name}
         </h2>
 
         <div className="flex gap-2 mt-2">
           {badGame.genres?.slice(0, 3).map((genre, i) => (
-            <span key={i} className="text-[9px] font-black uppercase tracking-widest text-zinc-500 border border-zinc-500/20 px-2 py-0.5 rounded">
+            <span key={i} className="text-[9px] font-bold uppercase tracking-widest text-zinc-500 border border-zinc-500/20 px-2 py-0.5 rounded">
               {genre.description}
             </span>
           ))}
@@ -42,11 +42,11 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
 
       <div className="grid grid-cols-2 gap-2 mb-6">
         <div className="bg-white/5 p-3 rounded-xl border border-white/5">
-          <span className="block text-[8px] font-black text-zinc-500 uppercase mb-1">
+          <span className="block text-[8px] font-bold text-zinc-500 uppercase mb-1">
             Entry Cost
           </span>
 
-          <span className="text-xl font-black text-red-400/80">
+          <span className="text-xl font-bold text-red-400/80">
             {badGame.is_free
               ? "FREE"
               : badGame.price_overview?.final_formatted || "N/A"}
@@ -54,11 +54,11 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
         </div>
 
         <div className="bg-white/5 p-3 rounded-xl border border-white/5">
-          <span className="block text-[8px] font-black text-zinc-500 uppercase mb-1">
+          <span className="block text-[8px] font-bold text-zinc-500 uppercase mb-1">
             Proton Status
           </span>
           <div className="flex items-center gap-1.5">
-            <span className={`text-xl font-black uppercase ${
+            <span className={`text-xl font-bold uppercase ${
               mapping?.badStatus === 'Borked' ? 'text-red-500' : 'text-amber-400'
             }`}>
               {mapping?.badStatus ?? "???"}
@@ -90,7 +90,7 @@ export default function BadGameCard({ badGame, mapping }: { badGame: NonSteamGam
 
       <div className="mt-6">
         {isNonSteam ? (
-          <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-[10px] font-black uppercase tracking-widest text-red-500">
+          <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-[10px] font-bold uppercase tracking-widest text-red-500">
             <RiAlertLine size={16} /> Anti-Cheat Blocked
           </div>
         ) : (
